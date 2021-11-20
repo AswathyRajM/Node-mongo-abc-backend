@@ -15,9 +15,8 @@ app.use(
 app.use(cors());
 
 const port = process.env.PORT || 5000;
-
-var mongoDB = process.env.mongodbURL;
-
+var mongoDB =
+	"mongodb+srv://admin:vkPhmqQm.8!3Rnk@cluster0.lugyh.mongodb.net/emp-demo?retryWrites=true&w=majority";
 mongoose.Promise = global.Promise;
 mongoose
 	.connect(mongoDB, {
