@@ -22,7 +22,7 @@ mongoose
 	.connect(mongoDB, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
-		useCreateIndex: true,
+		useCreateIndex: true,	
 		useFindAndModify: false,
 	})
 	.catch((err) => {
@@ -67,6 +67,13 @@ const Employee = mongoose.model("Employee", EmployeeSchema);
 /////////////////////////////////////////////////////////////
 
 ///////////////////////////APIs//////////////////////////////
+app.get("/", async (req, res) => {
+	try {
+		res.send("Hello");
+	} catch (error) {
+		res.status(500).send(error);
+	}
+});
 
 // get
 app.get("/api/employees", async (req, res) => {
